@@ -16,8 +16,7 @@ const config = {
 			out: 'build',
 			precompress: false,
 			env: {
-				host: process.env.PORT || 3000,
-				port: 'PORT'
+				port: process.env.PORT
 			}
 		}),
 		// hydrate the <div id="svelte"> element in src/app.html
