@@ -8,31 +8,18 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
+		// hydrate the <div id="svelte"> element in src/app.html
+		target: '#svelte',
+
 		// By default, `npm run build` will create a standard Node app.
 		// You can create optimized builds for different platforms by
 		// specifying a different adapter
 		adapter: adapter({
 			// default options are shown
-			out: 'build',
-			precompress: false,
 			env: {
 				port: process.env.PORT
 			}
-		}),
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
-	},
-	vite: {
-		server: {
-			hmr: {
-				host: '0.0.0.0',
-				port: 3000,
-				protocol: 'ws'
-			},
-			watch: {
-				usePolling: true,
-			},
-		},
+		})
 	}
 };
 
